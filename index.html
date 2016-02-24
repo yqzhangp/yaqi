@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-width,initial-scale=1.0,user-scalable = no">
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="main">
+        <div class="music">
+            <audio src="video/beyond.mp3" loop preload="none"/>
+            <!--preload:auto进入页面就开始加载资源 metadata:进入页面只先加载音频文件的头信息  none:进入页面资源不加载,只有播放的时候才开始加载-->
+            <!--<audio controls loop autoplay preload="none">
+                <source src="video/beyond.mp3" type="audio/mpeg"/>
+                <source src="video/beyond.wav" type="audio/wav"/>
+                <source src="video/beyond.ogg" type="audio/ogg"/>
+                &lt;!&ndash; <embed></embed>
+                 <object></object>&ndash;&gt;
+            </audio>-->
+        </div>
+        <ul id="list">
+            <li class="zIndex">
+                <div class="one-box"></div>
+                <div class="a1" id="a1">
+                    <span>张亚琦的简历</span>
+                    <span>-resume by team-</span>
+                </div>
+            </li>
+            <li>
+                <div class="a2">
+                    <p>个人基本信息</p>
+                    <p><img src="images/ss1.png"/></p>
+                    <p>姓名：张亚琦</p>
+                    <p>学历：本科</p>
+                    <p>专业：软件工程</p>
+                    <p>院校：天津理工大学</p>
+                </div>
+            </li>
+            <li>
+                <div class="a3">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <span><b>性格特点</b></span>
+                </div>
+            </li>
+           <li>
+                <div class="a4">
+                    <p><img src="images/d1.png"/></p>
+                    <p>在校期间电子厂里做过兼职</p>
+                    <p>2015年6月30正式入职软通动力</p>
+                    <p>2014年9月25日来到软通动力实习</p>
+                </div>
+           </li>
+            <li >
+                <!--CSS3属性transform详解之（旋转:rotate,缩放:scale,倾斜:skew,移动:translate）-->
+                <!--CSS3 transform-style 属性使被转换的子元素保留其 3D 转换：-->
+                <!--CSS3 transform-origin 属性设置旋转元素的基点位置-->
+                <!--CSS3 perspective 属性设置元素被查看位置的视图-->
+                <!--CSS3 animation 属性使用简写属性，将动画与 div 元素绑定-->
+                <!--CSS3 @keyframes 规则使 div 元素匀速向下移动：-->
+                <!--CSS3 transition 属性请把鼠标指针移动到蓝色的 div 元素上，就可以看到过渡效果-->
+                <div class="a5">
+                    <p>我心怀梦想，有态度，相信付出就会有回报</p>
+                    <p>如果你对我感兴趣，那我们邀约吧</p>
+                    <p>TEL：18514593445<br/>QQ：278353910</p>
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+</body>
+</html>
+<script src="js/index.js"></script>
+<script src="js/touch.js"></script>

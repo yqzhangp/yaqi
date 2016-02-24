@@ -1,0 +1,386 @@
+*{
+    margin:0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   font-family: sans-serif;
+}
+#main{
+    width: 640px;
+    height: 960px;
+    position: absolute;
+  /*left:50%; margin-left:-512px; 的作用主要是为了让这个div无论浏览器怎么拉伸都处于水平居中；
+    而z-index:1;这是层的上下层级关系，设置多少值根据自己的需要设置，数值越大就越显示在上层；*/
+    left:50%;
+    top:0;
+    /*CSS margin-left 属性:设置 p 元素的左外边距*/
+    margin-left:-320px;
+    transform-origin: top;
+    -webkit-transform-origin: top;/*改变缩放的基准点*/
+}
+/*----------------*/
+.music{
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    width: 45px;
+    height: 45px;
+    background: url("video/music.svg")  no-repeat;
+    background-size: 100% 100%;
+    z-index: 10;
+}
+
+
+.music.move{
+    -webkit-animation: audioMove 1s linear 0s infinite both;
+    animation: audioMove 1s linear 0s infinite both;
+}
+
+@-webkit-keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes audioMove {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+#list li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background-size: cover;
+    background-repeat:no-repeat ;
+}
+#list li:nth-child(1){
+    background-image: url(images/bg1.jpg);
+}
+#list li:nth-child(2){
+    background-image: url(images/uu.jpg);
+}
+#list li:nth-child(3){
+    background-image: url(images/c.png);
+}
+#list li:nth-child(4){
+    background-image: url(images/d.png);
+}
+#list li:nth-child(5){
+    background-image: url(images/e.png);
+}
+.zIndex{
+    z-index: 5;
+}
+.one-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    width: 500px;
+    height: 500px;
+    background: url(images/b1.png) no-repeat;
+    background-size: cover;
+}
+
+.a1{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    margin: -25px 0 0 -115px;
+    width: 300px;
+    height: 200px;
+    color: rgb(70, 175, 232);
+    text-align: center;
+}
+.a1 span{
+    display: block;
+}
+.a1 span:nth-child(1) {
+    line-height: 40px;
+    font-size: 45px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.a1 span:nth-child(2) {
+    line-height: 20px;
+    font-size: 30px;
+}
+
+#a1>span{
+    -webkit-animation: move 1s linear 0s 1 both;
+    animation: move 1s linear 0s 1 both;
+}
+
+@-webkit-keyframes move {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes move {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+.a2{
+    width: 320px;
+    height:320px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    margin-left: 20px;
+    font-size: 35px;
+    color: #fff;
+    text-align: left;
+}
+.a2 p:nth-child(1){
+
+    margin-bottom:100px;
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+
+
+}
+.a2 p:nth-child(2){
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid paleturquoise;
+    background: paleturquoise;
+    border-radius: 50%;
+
+}
+.a2 p:nth-child(3){
+    margin-top: 100px;
+
+
+}
+
+.a2 p:nth-child(even){
+    /*Odd 和 even 是可用于匹配下标是奇数或偶数的子元素的关键词（第一个子元素的下标是 1）*/
+    /*nth-child(even) 的意思就是从第1开始的偶数元素，:even的意思是指从第0开始的偶数元素
+    主要是transition(过渡效果),translate(移动),transform(变形)以及animation(动画)。
+    http://www.w3school.com.cn/cssref/pr_transform.asp*/
+    transform: translate(500px,0);
+    -webkit-transform: translate(500px,0);
+}
+.a2 p:nth-child(odd){
+    transform: translate(-500px,0);
+    -webkit-transform: translate(-500px,0);
+}
+
+#a2 p{
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    transition:1s;
+    -webkit-transition:1s;
+}
+
+.a3 p{
+    width: 147px;
+    height: 147px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left: -73px;
+    margin-top: -73px;
+}
+.a3 p:nth-child(1){
+    background: url(images/c11.png) no-repeat;
+}
+.a3 p:nth-child(2){
+    background: url(images/c12.png) no-repeat;
+}
+.a3 p:nth-child(3){
+    background: url(images/c13.png) no-repeat;
+}
+
+.a3 p:nth-child(4){
+    background: url(images/c14.png) no-repeat;
+}
+
+.a3 p:nth-child(5){
+    background: url(images/c15.png) no-repeat;
+}
+.a3 p:nth-child(6){
+    background: url(images/c16.png) no-repeat;
+}
+.a3 span{
+    text-align: center;
+    margin-left: 50px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: peru;
+    font-size: 50px;
+}
+#a3 p:nth-child(1){
+    left: 50%;
+    top: 30%;
+}
+#a3 p:nth-child(2){
+    left: 20%;
+    top: 40%;
+}
+#a3 p:nth-child(3){
+    left: 80%;
+    top: 40%;
+}
+#a3 p:nth-child(4){
+    left: 20%;
+    top: 60%;
+}
+#a3 p:nth-child(5){
+    left: 80%;
+    top: 60%;
+}
+#a3 p:nth-child(6){
+    left: 50%;
+    top: 70%;
+}
+#a3 p {
+    transform:rotate(720deg);
+    -webkit-transform:rotate(720deg);
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+#a3 span {
+    transform:rotate(720deg);
+    -webkit-transform:rotate(720deg);
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+.a4{
+
+    width: 460px;
+    height: 222px;
+    position: absolute;
+    left:50%;
+    margin-left: -230px;
+    bottom: 10%;
+    background: url(images/d2.png) no-repeat;
+    background-size: 15%;
+
+}
+.a4 p:nth-child(1){
+    transform: translate(0,1000px);
+    -webkit-transform: translate(0,1000px);
+
+}
+.a4 p:nth-child(2){
+    font-size: 30px;
+    transform: translate(0,1000px);
+    -webkit-transform: translate(0,1000px);
+
+}
+.a4 p:nth-child(3){
+    font-size: 30px;
+    transform: translate(0,1000px);
+    -webkit-transform: translate(0,1000px);
+
+}
+.a4 p:nth-child(4){
+    font-size: 30px;
+    transform: translate(0,1000px);
+    -webkit-transform: translate(0,1000px);
+
+}
+#a4 p:nth-child(1){
+    transform: translate(0,-600px);
+    -webkit-transform: translate(0,-600px);
+    transition:0.5s;
+    -webkit-transition:0.5s;
+}
+
+
+
+#a4 p:nth-child(2){
+    transform: translate(0,-3500px);
+    -webkit-transform: translate(0,-350px);
+    transition: 2.5s;
+    -webkit-transition: 2.5s;
+}
+#a4 p:nth-child(3){
+    transform: translate(0,-450px);
+    -webkit-transform: translate(0,-450px);
+    transition: 2.5s;
+    -webkit-transition: 2.5s;
+}
+#a4 p:nth-child(4){
+    transform: translate(0,-550px);
+    -webkit-transform: translate(0,-550px);
+    transition: 2.5s;
+    -webkit-transition: 2.5s;
+}
+
+.a5 p{
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #fff;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #fff;
+    position: absolute;
+    border: 1px solid #fff;
+    font-size: 28px;
+}
+.a5 p:nth-child(1){
+    left: 10%;
+    top:15%;
+}
+.a5 p:nth-child(2){
+    left: 25%;
+    top:45%;
+}
+.a5 p:nth-child(3){
+    left: 40%;
+    top:75%;
+}
+#a5 p{
+    width: 300px;
+    height: 150px;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+
+
+
+
+
